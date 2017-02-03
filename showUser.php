@@ -8,6 +8,10 @@
         header('Location: login.php');
     }
     include 'src/drawUserTweets.php';
+        $user = new User();
+    $user = $user->loadUserById($_SESSION['id']);
+    $image = $user->getImage();
+    $name = $user->getUsername();
 ?>
 <html lang="en">
 <head>
@@ -32,6 +36,18 @@
                     <li><a href="index.php"><button>Strona Główna</button></a></li>
                     <li><a href="messages.php"><button>Wiadomości</button></a></li>
             </ul>
+            <div id="user">
+                <span id="userName">
+                    <?php
+                    echo $name;
+                      ?>
+                </span>
+                <img id="userImage" src="
+                <?php
+                echo $image;
+                ?>">
+                </img>
+            </div>
         </div>
         <div class="margin">            
             <ul>

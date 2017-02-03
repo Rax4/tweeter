@@ -2,6 +2,22 @@ body
 {
     background-color: #8e7979;
 }
+#user
+{
+    float: right;
+    height: 100%;
+}
+#userName
+{
+    font-size: 200%;
+}
+#userImage
+{
+    float: right;
+    height: 260px;
+    width: 260px;
+    position: relative;
+}
 #avatar
 {
     background-image: url("../img/default.jpeg");
@@ -48,6 +64,10 @@ a:visited {
     background-color: #429b02;
 }
 #menu li
+{
+    display: inline-block;
+}
+#menu ul
 {
     display: inline-block;
 }
