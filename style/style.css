@@ -1,0 +1,222 @@
+body
+{
+    background-color: #8e7979;
+}
+#avatar
+{
+    background-image: url("../img/default.jpeg");
+    background-size: cover;
+    display: none;
+    height: 15%;
+    width: 10%;
+}
+#userMessageForm
+{
+    display: none;
+    float: left;
+}
+a:link
+{
+    color: black;
+    text-decoration: none;
+}
+a:visited {
+	color: black;
+}
+#logins *
+{
+    margin: 0 auto;
+    text-align: center;
+}
+#logins span
+{
+    display:table;
+    margin:0 auto;
+}
+#logins td
+{
+    padding: 4px;
+}
+#container
+{
+    padding: 20px;
+}
+#menu
+{
+    width: 100%;
+    height: 8%;
+    background-color: #429b02;
+}
+#menu li
+{
+    display: inline-block;
+}
+.margin
+{
+    width: 15%;
+    height: 100%;
+    background-color: #ff9b02;
+    float: left;
+}
+#content
+{
+    padding-top: 20px;
+    text-align: center;
+    float: left;
+    width: 70%;
+    height: 100%;
+    align-content: center;
+}
+.tweet
+{
+    padding: 10px;
+    position: relative;
+    clear: left;
+}
+.post
+{
+    width: 45%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid black;
+    position: relative;
+}
+.post .check
+{
+    float: left;
+        position: absolute;
+    
+}
+.image
+{
+    width:15%;
+    height: 10%;
+    float: left;
+}
+.post .image
+{
+    width:15%;
+    float: left;
+}
+.image img 
+{
+    width: 100%;
+    height: 100%;
+}
+.userName
+{
+    float: left;
+}
+.postText
+{
+    clear: left;
+    word-break: break-all;
+    width: 100%;
+    margin-bottom: 10%;
+}
+.delete
+{
+    float: right;
+}
+.check
+{
+    float: left;
+    position: relative;
+    bottom: 0px;
+}
+.comments
+{
+    padding: 9px;
+    display: none;
+    width: 35%;
+    min-height: 20%;
+    margin: 2 auto;
+    border: 2px solid black;
+}
+#messages .message
+{
+    width: 90%;
+    padding: 2%;
+    margin: 0px auto;
+}
+#messages a
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#messages .message .senderImage
+{
+    width: 10%;
+    height: 10%;
+    float: left;
+}
+#messages .message .senderImage img
+{
+    width: 100%;
+    height: 100%;
+}
+#messages .message .receiverImage
+{
+    width: 10%;
+    height: 10%;
+    float: right;
+}
+#messages .message .receiverImage img
+{
+    width: 100%;
+    height: 100%;
+}
+#messages #recievedMessages
+{
+    background-color: #d22121;
+    border: 2px solid red;
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+#messages #sentMessages
+{
+    border: 2px solid red;
+    background-color: #ff7732;
+    width: 40%;
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+#messages #userMessages
+{
+    border: 2px solid red;
+    background-color: #ff7732;
+    width: 40%;
+    clear: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    display: inline-table;
+}
+.receiverName
+{
+    float: right;
+}
+.senderName
+{
+    float: left;
+}
+.delete
+{
+    float: left;
+}
+#messages tr td
+{
+    border: 3px solid black;
+}
+#messages .postText
+{
+    clear: right;
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
