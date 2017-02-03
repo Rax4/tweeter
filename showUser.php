@@ -37,7 +37,7 @@
                     <li><a href="messages.php"><button>Wiadomości</button></a></li>
             </ul>
             <div id="user">
-                <span id="userName">
+                <span id="userName">Zalogowano jako:
                     <?php
                     echo $name;
                       ?>

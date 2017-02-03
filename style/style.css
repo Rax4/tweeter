@@ -10,12 +10,13 @@ body
 #userName
 {
     font-size: 200%;
+    float: left;
 }
 #userImage
 {
     float: right;
-    height: 260px;
-    width: 260px;
+    height: 400%;
+    width: 30%;
     position: relative;
 }
 #avatar
