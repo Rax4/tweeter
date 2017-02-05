@@ -73,6 +73,10 @@
                 {
                     header('Location: myProfile.php');
                 }
+                $usero = new User();
+                $usero = $usero->loadUserById($_GET['userId']);
+                $usero = $usero->getUsername();
+                echo ("Posty użytkownika: $usero");
                 $userId = $_GET['userId'];
                 drawUserTweets($userId);
             }

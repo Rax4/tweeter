@@ -2,15 +2,13 @@
 include 'user.php';
 include 'tweet.php';
 include 'comment.php';
-function drawTweets()
+function drawTweetById($id)
 {
     $user = new User();
     $tweets= new Tweet();
-    $tweets = $tweets->loadAllTweets();
-    if ($tweets)
+    $tweet = $tweets->loadTweetById($id);
+    if ($tweet)
     {
-        foreach ($tweets as $tweet)
-        {
             $comments=  drawCommentsForPost($tweet->getId());
             $user = $user->loadUserById($tweet->getUserId());
             $name = $user->getUsername();
@@ -18,14 +16,12 @@ function drawTweets()
             $text = $tweet->getText();
             $date = $tweet->getDate();
         echo('<div class="tweet">
-        <div href="showPost.php?postId='.$tweet->getId().'" class="post">
+        <div class="post">
             <div class="image"><img src="'.$image.'"></div>
-            <div class="userName"><a href="showUser.php?userId='.$user->getId().'">'.$name.' </a></div>
+            <div class="userName"><a href="showUser.php?userId='.$user->getId().'">'.$name.'</a></div>
             <div class="delete">&nbsp'.$date.'</div>
-            <a style="display:block" href="showPost.php?postId='.$tweet->getId().'"><div class="postText">'.$text.'</div></a>
-            <div class="check"><input type="checkbox" class="showCom">Pokaz komentarze</div>
+            <div class="postText">'.$text.'</div>
         </div>'.$comments.'</div>');
-        }
     }
 }
 function drawCommentsForPost($postId)
@@ -44,16 +40,16 @@ function drawCommentsForPost($postId)
             $date = $comment->getDate();
             $text = $comment->getText();
             $output.= '
-            <div class="comments">
+            <div class="commenty">
                     <div class="image"><img src="'.$image.'"></div>
-                    <div class="userName"><a href="showUser.php?userId='.$user->getId().'">'.$name.' </a></div>
+                    <div class="userName"><a href="showUser.php?userId='.$user->getId().'">'.$name.'</a></div>
                     <div class="delete">'.$date.'</div>
                     <div class="postText">'.$text.'</div>    
                     </div>
             ';
         }
     }
-    $output.='<div class="comments"><form action="src/addComm.php" method="POST" class="newTweetForm">                
+    $output.='<div class="commenty"><form action="src/addComm.php" method="POST" class="newTweetForm">                
                 <textarea name="comText" class="comText" maxlength="60" rows="4" cols="50"></textarea>
                 <input style="display: none;"type="text" name="postId" value="'.$postId.'"></input>
                 <br>

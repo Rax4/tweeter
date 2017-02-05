@@ -2,6 +2,16 @@ body
 {
     background-color: #8e7979;
 }
+#sent
+{
+    float: right;
+    margin-right: 15%;
+}
+#recieved
+{
+    float: left;
+    margin-left: 15%;
+}
 #user
 {
     float: right;
@@ -131,7 +141,8 @@ a:visited {
 .postText
 {
     clear: left;
-    word-break: break-all;
+    word-break: normal ;
+    white-space:normal;
     width: 100%;
     margin-bottom: 10%;
 }
@@ -149,6 +160,14 @@ a:visited {
 {
     padding: 9px;
     display: none;
+    width: 35%;
+    min-height: 20%;
+    margin: 2 auto;
+    border: 2px solid black;
+}
+.commenty
+{
+    padding: 9px;
     width: 35%;
     min-height: 20%;
     margin: 2 auto;
@@ -193,6 +212,7 @@ a:visited {
     background-color: #d22121;
     border: 2px solid red;
     width: 40%;
+    clear: right;
     float: left;
     margin-left: 5%;
     margin-top: 5%;

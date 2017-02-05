@@ -7,8 +7,8 @@
     {
         header('Location: login.php');
     }
-    include 'src/drawMessages.php';
-    $user = new User();
+    include 'src/drawTweetById.php';
+        $user = new User();
     $user = $user->loadUserById($_SESSION['id']);
     $image = $user->getImage();
     $name = $user->getUsername();
@@ -23,6 +23,7 @@
     <script type="text/JavaScript" src="js/comCounter.js"></script>
     <script type="text/JavaScript" src="js/showHide.js"></script>
     <script type="text/JavaScript" src="js/counter.js"></script>
+    <script type="text/JavaScript" src="js/newMessage.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <title>Twitter</title>
 </head>
@@ -48,22 +49,30 @@
                 </img>
             </div>
         </div>
-        <div class="margin"></div>
+        <div class="margin">            
+            <ul>
+                    <li><button id="messageBtn">Wyślij wiadomość</button></li>
+            </ul>
+        </div>
         <div id="content">
-            <div id="messages">
-                <span id="recieved">Otrzymane Wiadomości:</span>
-                <span id="sent">Wysłane wiadomości:</span>
-                <table id="recievedMessages">
+                <div id="userMessageForm">
+                    <form action="src/sendMessage.php" method="POST" class="messageForm">     
+                        <input name="receiver" style="display: none;" type="text" value="<?php
+                        echo($_GET['userId']);
+                        ?>">
+                        <textarea name="messageText" id="messageText" maxlength="200" rows="4" cols="50"></textarea>
+                        <br>
+                        <span class="counter"></span>
+                        <input type="submit" value="Wyślij wiadomośc">
+                    </form>
+                </div>
             <?php
-                    drawMessagesByReciever($_SESSION['id']);
-                ?>
-                </table>
-                <table id="sentMessages">
-            <?php
-                    drawMessagesBySender($_SESSION['id']);
-                ?>
-                </table>
-            </div>
+            if(isset($_GET['postId']))
+            {
+                $postId = $_GET['postId'];
+                drawTweetById($postId);
+            }
+            ?>
         </div>
         <div class="margin"></div>
     </div>

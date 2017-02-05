@@ -64,6 +64,7 @@
                 </span>
                 <input type="submit" value="Dodaj nowy post">
             </form>
+            Wszystkie Posty:
             <?php
             drawTweets();
             ?>
